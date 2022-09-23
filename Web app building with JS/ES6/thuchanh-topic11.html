@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //In ra tất cả mã khoa học của các loài chim trong mảng dữ liệu.
+    const birds = [
+        { "ID": "DV8", "Name": "Eurasian Collared-Dove", "Type": "Dove" },
+        { "ID": "HK12", "Name": "Bald Eagle", "Type": "Hawk" },
+        { "ID": "HK6", "Name": "Cooper's Hawk", "Type": "Hawk" },
+        { "ID": "SP11", "Name": "Bell's Sparrow", "Type": "Sparrow" },
+        { "ID": "DV2", "Name": "Mourning Dove", "Type": "Dove" }
+    ];
+
+    //Cách 1
+    // const birdsMap = new Map(Object.entries(birds));
+    // birdsMap.forEach(e => {
+    //     console.log('Chim ' + e.Name + ' có mã khoa học là ' + e.ID);
+    // })
+
+    //Cách 2
+    const birdsMap2 = new Map();
+    birds.forEach((e, index) => {
+
+        birdsMap2.set(index, e);
+    })
+    birdsMap2.forEach(e => {
+        console.log('Chim ' + e.Name + ' có mã khoa học là ' + e.ID);
+    })
+
+
+</script>
+
+</html>
