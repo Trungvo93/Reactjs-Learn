@@ -13,6 +13,7 @@
 </body>
 <script>
     //In ra tất cả mã khoa học của các loài chim trong mảng dữ liệu.
+    //Tài liệu: https://javascript.info/map-set
     const birds = [
         { "ID": "DV8", "Name": "Eurasian Collared-Dove", "Type": "Dove" },
         { "ID": "HK12", "Name": "Bald Eagle", "Type": "Hawk" },
@@ -36,6 +37,12 @@
     birdsMap2.forEach(e => {
         console.log('Chim ' + e.Name + ' có mã khoa học là ' + e.ID);
     })
+
+
+    //Ngoài lề: 
+    birdsMap2[0] = 2; //Hiểu nôm na là khi get() sẽ trả giá trị tại key là số đã gán, ở đây là key:2
+    birdsMap2[2] = 0;
+    console.log(birdsMap2.get(birdsMap2[2]));
 
 
 </script>
