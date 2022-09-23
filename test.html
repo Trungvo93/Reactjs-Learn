@@ -12,9 +12,56 @@
 
 </body>
 <script>
-const set2 = new Set([1, 2, "a", "b", 1]);
-console.log(set2.values());
-// Set(4) {1, 2, "a", "b"}
+    const numbers = [1, 4, 2, 5, 7, 5, 4, 3, 2, 3, 8];
+
+    //Tìm số lớn nhất
+    let max = numbers[0];
+    for (let num of numbers) {
+        if (num > max) max = num;
+    }
+    console.log('Số lớn nhất là: ' + max);
+
+    //Tìm số lớn thứ 2  không dùng method có sẵn
+    let max2st = numbers[0];
+    for (let num of numbers) {
+        if (num < max && num > max2st) max2st = num;
+    }
+    console.log('Số lớn thứ 2 là: ' + max2st);
+
+    // Sắp xếp theo thứ tự tăng dần không dùng method có sẵn
+    // let min = numbers[0];
+    // let index = 0;
+    // let arr1 = numbers;
+    // let temp = numbers[0];
+    // let flag = 0;
+    // while (arr1.length > flag) {
+    //     flag = 0;
+    //     for (let i = 0; i < arr1.length; i++) {
+    //         if (arr1[i] < min) {
+
+    //         }
+    //     }
+    // }
+
+    //Loại bỏ phần tử trùng lặp
+    let arr2 = [];
+    let flag = 0;
+    let count = 0;
+    while (count < numbers.length) {
+        for (let i = 0; i < numbers.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr2[j] == numbers[i]) {
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0) {
+                arr2.push(numbers[i]);
+            } else flag = 0;
+        }
+        count++;
+    }
+    console.log(arr2);
 </script>
 
 </html>

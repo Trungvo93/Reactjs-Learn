@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const names = [
+        "ngUyen van B ",
+        "  Nguyen  van A",
+        "Van",
+        "vu hoai lam",
+        "  Vu hoai lan",
+        " nguyen Van An"
+    ];
+
+    const searchName = (name, arr) => {
+        let itemcheck = name.toLocaleUpperCase();
+        let arrUp = upLetterArr(arr);
+    }
+
+    function upLetterArr(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].toLocaleUpperCase();
+        }
+        return arr;
+    }
+    console.log(searchName('nguyen',names));
+</script>
+
+</html>
