@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //In chuỗi string với kí tự đầu viết hoa
+    //Ví dụ: NGUYEN VAN A -> Nguyen Van A
+
+    // const text = 'NGUYEN VAN A';
+    const text = 'nguYEN VAN aNh';
+    function upFirstLetter(text){
+        const characters = text.toLowerCase().split(' ');
+
+        //Cách 1
+        // for(let i = 0; i < characters.length; i++){
+        //     characters[i] = characters[i].charAt(0).toUpperCase()+characters[i].slice(1);
+        // }
+        // return characters.join(' ');
+
+        //Cách 2
+        //Đối với map thì bắt buộc phải gán vào biến 
+        let result = characters.map(e => e.charAt(0).toUpperCase()+e.slice(1)).join(' ');
+        return result;
+        
+    }
+    console.log(upFirstLetter(text));
+</script>
+</html>
