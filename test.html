@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+
+<body>
+</body>
+<script>
+    const flag = true;
+    let testPromise = new Promise(function (resolve, reject) {
+        if (flag) {
+            resolve(1);
+        } else reject('error')
+    })
+
+    let testPromise2 = new Promise(function (resolve, reject) {
+        if (flag) {
+            resolve(5);
+        } else reject('error')
+    })
+
+    testPromise.then(function trueValue(e) {
+        console.log(e);
+        return e + 1;
+    })
+
+        .then(function trueValue2(e) {
+            console.log(e);
+            return e + 1;
+        })
+
+    testPromise2.then(function trueValue(e) {
+        console.log(e);
+        return e + 1;
+    })
+
+        .then(function trueValue2(e) {
+            console.log(e);
+            return e + 1;
+        })
+
+    testPromise.then(function trueValue(e) {
+        console.log(e);
+        return e + 1;
+    })
+
+        .then(function trueValue2(e) {
+            console.log(e);
+            return e + 1;
+        })
+</script>
+
+</html>
