@@ -13,7 +13,7 @@
 </body>
 <script>
     const numbers = [1, 4, 2, 5, 7, 5, 4, 3, 2, 3, 8];
-
+    // const numbers = [1, 1, 2, 3, 5, 3, 1, 5, 6, 7, 4];
     //Tìm số lớn nhất
     let max = numbers[0];
     for (let num of numbers) {
@@ -29,39 +29,35 @@
     console.log('Số lớn thứ 2 là: ' + max2st);
 
     // Sắp xếp theo thứ tự tăng dần không dùng method có sẵn
-    // let min = numbers[0];
-    // let index = 0;
-    // let arr1 = numbers;
-    // let temp = numbers[0];
-    // let flag = 0;
-    // while (arr1.length > flag) {
-    //     flag = 0;
-    //     for (let i = 0; i < arr1.length; i++) {
-    //         if (arr1[i] < min) {
-
-    //         }
-    //     }
-    // }
+    let arrSort = [...numbers];
+    for (let i = 0; i < arrSort.length; i++) {
+        let min = arrSort[i];
+        let index = i;
+        for (let j = i + 1; j < arrSort.length; j++) {
+            if (arrSort[j] < min) {
+                min = arrSort[j];
+                index = j;
+            }
+        }
+        let tempValue = arrSort[i];
+        arrSort[i] = min;
+        arrSort[index] = tempValue;
+    }
+    console.log(arrSort);
 
     //Loại bỏ phần tử trùng lặp
-    let arr2 = [];
-    let flag = 0;
-    let count = 0;
-    while (count < numbers.length) {
-        for (let i = 0; i < numbers.length; i++) {
-            for (let j = 0; j < arr2.length; j++) {
-                if (arr2[j] == numbers[i]) {
-                    flag = 1;
-                    break;
-                }
+    let arrNoDup = [];
+    for (let i = 0; i < numbers.length; i++) {
+        for (let j = i + 1; j < numbers.length; j++) {
+            if (numbers[i] == numbers[j]) {
+                numbers[j] = undefined;
             }
-            if (flag == 0) {
-                arr2.push(numbers[i]);
-            } else flag = 0;
         }
-        count++;
+        if (numbers[i] != undefined) {
+            arrNoDup.push(numbers[i]);
+        }
     }
-    console.log(arr2);
+    console.log(arrNoDup);
 </script>
 
 </html>

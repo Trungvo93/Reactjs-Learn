@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*Cho một dãy bao gồm N bóng đèn với 1 nút bấm. Các đèn có 2 trạng thái là sáng/tắt.
+    Quy tắc như sau với mỗi lần bấm nút:
+        - Đèn thứ nhất sẽ chuyển trạng thái. Tức là nếu sáng -> tắt và ngược lại.
+        - Đèn thứ M+1 (với 0 < M < N) sẽ chuyển trạng thái nếu đèn thứ M đang là sáng->tắt.
+    Yêu cầu: Cho trước số đèn và số lần bấm nút, hãy biểu diễn trạng của các đèn với 1 = sáng, 0 = tắt.
+    Ví dụ 1:
+        Input: 2 1
+        Output: 1 0
+    Ví dụ 2:
+        Input: 2 5
+        Output: 1 0
+    Ví dụ 3:
+        Input: 3 6
+        Output: 0 1 1
+    */
+
+    function showStatusLights(numLight, numPress) {
+        let arrStatus = [];
+        for (let i = 0; i < numLight; i++) {
+            arrStatus[i] = 0;
+        }
+
+        for (let i = 0; i < numPress; i++) {
+            if(arrStatus[0] == 0) {
+                arrStatus[0] = 1;
+            }else arrStatus[0] = 0;
+            for (let j = 1; j < arrStatus.length; j++) {
+                if(arrStatus[j-1] == 0) {
+                    arrStatus[j] = 1;
+                }
+            }
+        }
+        return arrStatus;
+    }
+    console.log(showStatusLights(2, 1));
+    console.log(showStatusLights(2, 5));
+    console.log(showStatusLights(3, 6));
+</script>
+
+</html>

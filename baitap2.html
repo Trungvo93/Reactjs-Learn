@@ -22,17 +22,34 @@
     ];
 
     const searchName = (name, arr) => {
-        let itemcheck = name.toLocaleUpperCase();
-        let arrUp = upLetterArr(arr);
+        let cvName = name.toLowerCase();
+        const result = arr.filter( item => {
+            item.trim().toLowerCase().includes(cvName); //Dòng này tìm đúng sẽ trả về true
+            //Cái nào true thì hàm filter sẽ báo là đúng và đẩy item đó vào mảng result.
+        })
+        return result;
     }
 
-    function upLetterArr(arr) {
-        for (let i = 0; i < arr.length; i++) {
-            arr[i] = arr[i].toLocaleUpperCase();
-        }
-        return arr;
-    }
     console.log(searchName('nguyen',names));
+
+    // const names = [
+    //     "ngUyen van B ",
+    //     "  Nguyen  van A",
+    //     "Van",
+    //     "vu hoai lam",
+    //     "  Vu hoai lan",
+    //     " nguyen Van An"
+    // ];
+
+    // const search = (name, arr) => {
+    //     let name2 = name.trim().toLowerCase();
+    //     const result = arr.filter((item) =>
+    //         item.trim().toLowerCase().includes(name2)
+    //     );
+    //     return result;
+    // };
+
+    // console.log(search("Nguyen", names));
 </script>
 
 </html>
