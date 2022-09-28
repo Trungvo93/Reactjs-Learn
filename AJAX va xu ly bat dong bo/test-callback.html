@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Callback bắt buộc tham số truyền vào phải là 1 function
+    function showResult(callback){
+        if(typeof callback == "function"){
+            callback('echo-slam');
+        }
+        else{
+            console.log(`${callback} is not a function`);
+        }
+    }
+
+    function numbers(echo){
+        console.log(`${echo} slam slam slam`);
+    }
+
+    showResult(numbers); // tham số truyền vào là function ra kết quả callback
+    showResult(5); // tham số truyền vào không phải function thì chạy else dưới
+</script>
+</html>
