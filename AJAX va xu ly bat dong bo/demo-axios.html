@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+
+</head>
+<style>
+    iframe {
+        /* display: block; */
+    }
+</style>
+
+<body>
+    <!-- <iframe src="https://giphy.com/embed/26FPGI3ZgduhYYVTa" frameborder="0"></iframe> -->
+    <h1>GIPHY PARTY</h1>
+    <div class="searchGiphy">
+        <input type="search" id="searchInput" placeholder="Enter a search term">
+        <button id="searchBtn">Search Giphy!</button>
+        <button id="removeBtn">Remove Images</button>
+    </div>
+    <div id="showGiphy"></div>
+</body>
+<script>
+    //Show data theo mảng
+    async function getData() {
+        try {
+            const res = await axios.get(
+                `http://api.giphy.com/v1/gifs/search?q=hilarious&api_key=D2tRjv4C2Ln9u958edPqWyhL14YDkm6f`
+            );
+            let randomGif = Math.floor(Math.random()*50)
+            console.log(res.data.data[randomGif]);
+        } catch (e) {
+            console.log("Có lỗi: ", e);
+        }
+    }
+    getData();
+    const searchBtn = document.getElementById("searchBtn");
+    searchBtn.addEventListener("click", showGiphy)
+    function showGiphy() {
+
+        //Tạo 1 node
+        let item = document.createElement("iframe");
+        
+        //Thêm thuộc tính trong node
+        let itemSrc = document.createAttribute("src");
+        itemSrc.value = "https://giphy.com/embed/26FPGI3ZgduhYYVTa";
+        item.setAttributeNode(itemSrc);
+        let itemBoder = document.createAttribute("frameborder");
+        itemBoder.value = "0";
+        item.setAttributeNode(itemBoder);
+
+        //Thêm 1 node vào cuối danh sách
+        let showGiphy = document.getElementById("showGiphy");
+        showGiphy.appendChild(item);
+
+    }
+</script>
+
+</html>
