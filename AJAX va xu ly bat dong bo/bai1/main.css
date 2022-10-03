@@ -30,3 +30,29 @@ main{
 #searchInput:focus{
     outline: 0px;
 }
+
+#searchBtn{
+    color: white;
+    background-color: #212121;
+    border: 1px gainsboro groove;
+    padding: 5px;
+    border-radius: 5px;
+}
+#searchBtn:hover{
+    background-color: gray;
+    transition: 0.3s;
+}
+#searchBtn:focus{
+    border: 1px rgb(48, 80, 187) groove;
+}
+
+#removeBtn{
+    color: white;
+    background-color: #F55938;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px gainsboro groove;
+}
+#removeBtn:hover{
+    background-color: #f57d65;
+}

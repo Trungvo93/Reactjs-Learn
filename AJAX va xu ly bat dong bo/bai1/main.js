@@ -19,9 +19,11 @@ function showGiphy() {
             let showGiphy = document.getElementById("showGiphy");
             showGiphy.appendChild(item);
             document.getElementById("searchInput").value = '';
+            document.getElementById("searchInput").focus();
         })
         .catch(error => {
             console.log(`Lỗi ${error}`);
+            alert(`Không có hình nào cả`);
         })
         
 }
