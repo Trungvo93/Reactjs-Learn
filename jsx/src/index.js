@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Bai1 from './Bai1';
 import Bai2 from './Bai2';
 import Bai3 from './Bai3';
+import Bai4 from './Bai4';
 
 const bai1 = ReactDOM.createRoot(document.getElementById('root'));
 bai1.render(
@@ -20,6 +21,11 @@ bai2.render(
 const bai3 = ReactDOM.createRoot(document.getElementById('root3'));
 bai3.render(
   <Bai3 />
+)
+
+const bai4 = ReactDOM.createRoot(document.getElementById('root4'));
+bai4.render(
+  <Bai4 />
 )
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

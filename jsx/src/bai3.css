@@ -5,20 +5,21 @@ body {
 }
  
 .container {
+  margin-top: 100px;
   height: 100vh;
   width: 100%;
-  position: relative;
+  /* position: relative; */
 }
  
 .card {
   height: 500px;
   width: 400px;
   margin: auto;
-  position: absolute;
+  /* position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
